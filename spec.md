@@ -309,9 +309,9 @@ typedef struct {
 
 The `role` component sets the role the Web server expects the application to play. The currently-defined roles are:
 
-  * FCGI_RESPONDER
-  * FCGI_AUTHORIZER
-  * FCGI_FILTER
+  * `FCGI_RESPONDER`
+  * `FCGI_AUTHORIZER`
+  * `FCGI_FILTER`
 
 Roles are described in more detail in [Section 6](#roles) below.
 
