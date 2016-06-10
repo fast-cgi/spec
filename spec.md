@@ -13,35 +13,35 @@ Document Version: 1.0
 
 * * *
 
-  1. [Introduction](#introduction)
-  2. [Initial process state](#initial-process-state)
-      1. [Argument list](#argument-list)
-      2. [File descriptors](#file-descriptors)
-      3. [Environment variables](#environment-variables)
-      4. [Other state](#other-state)
-  3. [Protocol basics](#protocol-basics)
-      1. [Notation](#notation)
-      2. [Accepting transport connections](#accepting-transport-connections)
-      3. [Records](#records)
-      4. [Name-Value pairs](#name-value-pairs)
-      5. [Closing transport connections](#closing-transport-connections)
-  4. [Management record types](#management-record-types)
-      1. [`FCGI_GET_VALUES`, `FCGI_GET_VALUES_RESULT`](#fcgigetvalues-fcgigetvaluesresult)
-      2. [`FCGI_UNKNOWN_TYPE`](#fcgiunknowntype)
-  5. [Application record types](#application-record-types)
-      1. [`FCGI_BEGIN_REQUEST`](#fcgibeginrequest)
-      2. [Name-Value pair streams: `FCGI_PARAMS`, `FCGI_RESULTS`](#name-value-pair-streams-fcgiparams)
-      3. [Byte streams: `FCGI_STDIN`, `FCGI_DATA`, `FCGI_STDOUT`, `FCGI_STDERR`](#byte-streams-fcgistdin-fcgidata-fcgistdout-fcgistderr)
-      4. [`FCGI_ABORT_REQUEST`](#fcgiabortrequest)
-      5. [`FCGI_END_REQUEST`](#fcgiendrequest)
-  6. [Roles](#roles)
-      1. [Role protocols](#role-protocols)
-      2. [Responder](#responder)
-      3. [Authorizer](#authorizer)
-      4. [Filter](#filter)
-  7. [Errors](#errors)
-  8. [Types and constants](#types-and-constants)
-  9. [References](#references)
+  1. [Introduction](#1-introduction)
+  2. [Initial process state](#2-initial-process-state)
+      1. [Argument list](#21-argument-list)
+      2. [File descriptors](#22-file-descriptors)
+      3. [Environment variables](#23-environment-variables)
+      4. [Other state](#24-other-state)
+  3. [Protocol basics](#3-protocol-basics)
+      1. [Notation](#31-notation)
+      2. [Accepting transport connections](#32-accepting-transport-connections)
+      3. [Records](#33-records)
+      4. [Name-Value pairs](#34-name-value-pairs)
+      5. [Closing transport connections](#35-closing-transport-connections)
+  4. [Management record types](#4-management-record-types)
+      1. [`FCGI_GET_VALUES`, `FCGI_GET_VALUES_RESULT`](#41-fcgi_get_values-fcgi_get_values_result)
+      2. [`FCGI_UNKNOWN_TYPE`](#42-fcgi_unknown_type)
+  5. [Application record types](#5-application-record-types)
+      1. [`FCGI_BEGIN_REQUEST`](#51-fcgi_begin_request)
+      2. [Name-Value pair streams: `FCGI_PARAMS`](#52-name-value-pair-streams-fcgi_params)
+      3. [Byte streams: `FCGI_STDIN`, `FCGI_DATA`, `FCGI_STDOUT`, `FCGI_STDERR`](#53-byte-streams-fcgi_stdin-fcgi_data-fcgi_stdout-fcgi_stderr)
+      4. [`FCGI_ABORT_REQUEST`](#54-fcgi_abort_request)
+      5. [`FCGI_END_REQUEST`](#55-fcgi_end_request)
+  6. [Roles](#6-roles)
+      1. [Role protocols](#61-role-protocols)
+      2. [Responder](#62-responder)
+      3. [Authorizer](#63-authorizer)
+      4. [Filter](#64-filter)
+  7. [Errors](#7-errors)
+  8. [Types and constants](#8-types-and-constants)
+  9. [References](#9-references)
   10. [Table: properties of the record types](#a-table-properties-of-the-record-types)
   11. [Typical protocol message flow](#b-typical-protocol-message-flow)
 
@@ -59,7 +59,7 @@ We'll introduce FastCGI by comparing it with conventional Unix implementations o
 
 The initial state of a FastCGI process is more spartan than the initial state of a CGI/1.1 process, because the FastCGI process doesn't begin life connected to anything. It doesn't have the conventional open files `stdin`, `stdout`, and `stderr`, and it doesn't receive much information through environment variables. The key piece of initial state in a FastCGI process is a listening socket, through which it accepts connections from a Web server.
 
-After a FastCGI process accepts a connection on its listening socket, the process executes a simple protocol to receive and send data. The protocol serves two purposes. First, the protocol multiplexes a single transport connection between several independent FastCGI requests. This supports applications that are able to process concurrent requests using event-driven or multi-threaded programming techniques. Second, within each request the protocol provides several independent data streams in each direction. This way, for instance, both `stdout` and `stderr data` pass over a single transport connection from the application to the Web server, rather than requiring separate pipes as with CGI/1.1.
+After a FastCGI process accepts a connection on its listening socket, the process executes a simple protocol to receive and send data. The protocol serves two purposes. First, the protocol multiplexes a single transport connection between several independent FastCGI requests. This supports applications that are able to process concurrent requests using event-driven or multi-threaded programming techniques. Second, within each request the protocol provides several independent data streams in each direction. This way, for instance, both `stdout` and `stderr` data pass over a single transport connection from the application to the Web server, rather than requiring separate pipes as with CGI/1.1.
 
 A FastCGI application plays one of several well-defined *roles*. The most familiar is the *Responder* role, in which the application receives all the information associated with an HTTP request and generates an HTTP response; that's the role CGI/1.1 programs play. A second role is *Authorizer*, in which the application receives all the information associated with an HTTP request and generates an authorized/unauthorized decision. A third role is *Filter*, in which the application receives all the information associated with an HTTP request, plus an extra stream of data from a file stored on the Web server, and generates a "filtered" version of the data stream as an HTTP response. The framework is extensible so that more FastCGI can be defined later.
 
