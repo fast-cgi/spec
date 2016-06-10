@@ -4,7 +4,7 @@ Since fastcgi.com is not available anymore, I ([fbbdev](https://github.com/fbbde
 
 ## Contents
 
-This repository contains two version of the specification.
+This repository contains two version of the specification:
 
   * The original version from fastcgi.com, pulled from the Wayback Machine archive, at [original/spec.html](original/spec.html)
 
