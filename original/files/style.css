@@ -1,0 +1,231 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 11:37:56 Mar 5, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 8:07:39 May 20, 2016.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+body {
+padding:0px;
+margin:0px;
+background:url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/bg.jpg) top left repeat-x;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:100.1%
+}
+#wrapper {
+width:980px;
+margin:20px auto;
+background:#CCCCCC;
+}
+#logo {
+background:url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/logo.jpg) no-repeat top left;
+height:200px;
+
+}
+#footer {
+background:url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/footer.jpg) no-repeat top left;
+height:18px;
+text-align:center;
+font-size:60%;
+padding:42px 0 0 0;
+}
+#footer a:link, #footer a:visited, #footer a:hover {
+color:#000;
+text-decoration:none;
+}
+#content {
+background:url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/content.jpg) repeat-y top left;
+padding:10px 40px;
+font-size:80%;
+}
+#heading {
+background:url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/heading.jpg) no-repeat top left;
+height:40px;
+margin:0;
+padding:20px 0 0 50px;
+color:#fff;
+font-size:120%;
+}
+#nav {
+background:url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/navbar.jpg) no-repeat top left;
+height:40px;
+font-size:80%;
+}
+#nav ul {
+list-style-type: none;
+float:right;
+margin:0 10px 0 0;
+}
+#nav ul li {
+display:inline;
+}
+#nav ul li a{
+font-size:100%;
+padding:12px 14px 0 14px;
+margin:0 -1px 0 0;
+float: left;
+text-align: center;
+height:28px;
+}
+#nav ul li a:link, #nav ul li a:visited {
+color:#fff;
+text-decoration:none;
+}
+#nav ul li a:hover {
+background:url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/buttonhov.jpg) repeat-x top left;
+color:#000;
+}
+#content ul {
+margin:0px 30px;
+padding:0;
+list-style:url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/bullet.jpg);
+}
+.messages {
+margin:20px 0 0 0;
+}
+
+#content ul li {
+margin:6px 2px;
+}
+a:link, a:visited {
+color:#f60;
+}
+a:hover {
+color:#000;
+}
+
+#bottombar {
+background:#f95 url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/bottombar.jpg) repeat-x top left;
+padding:10px 20px;
+border-bottom:1px #000 solid;
+}
+#header-region {
+background:#f95 url(/web/20160305113756/http://www.fastcgi.com/drupal/sites/all/themes/FastCGI/images/topbar.jpg) repeat-x bottom left;
+padding:10px 20px;
+
+}
+#bottombar a:link, #bottombar a:visited, #header-region a:link, #header-region a:visited, #sidebar-right a:link, #sidebar-right a:visited, #sidebar-left a:link, #sidebar-left a:visited {
+color:#000;
+}
+
+#bottombar .form-item, #header-region .form-item {
+width:300px;
+
+text-align:left;
+}
+#bottombar .form-item label, #header-region .form-item label{
+padding:5px 0 0 0;
+float:left;
+width:40%;
+}
+
+#bottombar h2, #header-region h2 {
+color:#fff;
+font-size:110%;
+font-weight:normal;
+margin:10px 0 0 0;
+padding:0;
+}
+.item-list ul {
+
+
+text-align:left;
+}
+#edit-submit {
+
+text-align:center;
+}
+#bottombar .content, #header-region .content {
+width:500px;
+font-size:80%;
+}
+
+ul.secondary li a:link, ul.secondary li a:visited {
+border:1px solid #000;
+padding:2px 10px;
+background:#fff;
+color:#000;
+}
+ul.secondary li a:hover {
+
+background:#f60;
+color:#fff;
+}
+ul.secondary li.active a {
+
+background:#f60;
+color:#fff;
+}
+ul.secondary {
+border:0px;
+
+}
+
+ul.primary li a:link, ul.primary li a:visited {
+border:1px solid #000;
+padding:2px 10px;
+background:#fff;
+color:#000;
+
+
+}
+ul.primary li a:hover {
+
+background:#f60;
+color:#fff;
+}
+ul.primary li.active a {
+
+background:#f60;
+color:#fff;
+}
+ul.primary {
+border:0px;
+height:30px;
+}
+#tabs-wrapper{
+margin:0 0 20px 0;
+}
+
+#sidebar-left h2, #sidebar-right h2 {
+font-weight:normal;
+margin:3px 4px 0 4px;
+}
+
+#sidebar-left, #sidebar-right{
+
+-moz-opacity: 0.70;
+filter: Alpha(Opacity=70);
+font-size:80%;
+background:#CCCCCC;
+border:#000 solid 1px;
+padding:5px;
+position:fixed;
+bottom:5px;
+
+}
+#sidebar-right {
+float:right;
+right:5px;
+}
+#sidebar-left {
+float:left;
+left:5px;
+}
+#bread {
+text-align:right;
+margin:0;
+padding:10px 30px 0 0;
+font-size:70%;
+color:#000
+}
+#bread a:link, #bread a:visited {
+color:#000000;
+text-decoration:none;
+}
